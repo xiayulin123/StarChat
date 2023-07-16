@@ -32,3 +32,15 @@ To view the app on a local machine using a virtual device, an emulator is requir
 
 Star Chat enables users to record their chat history, create accounts, and log in securely. Exciting new features are in development and will be released in the future. Stay tuned for updates!
 
+
+## Preview
+
+![home](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/6273da1e-1f1c-4f51-a44a-aba5330283e3)
+
+
+![signup](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/86762824-f7b6-47fc-bb80-23cb36fac731)
+
+![chat](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/93fd836d-b586-410f-affa-74cbc9006413)
+
+
+![message](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/d5cd0738-39cd-4bc1-af89-302066a70566)

@@ -1,6 +1,7 @@
 import { useContext, useEffect, React } from "react"
 import {
   FlatList,
+  ImageBackground,
   Pressable,
   StatusBar,
   StyleSheet,
@@ -11,7 +12,7 @@ import { GlobalContext } from "../context"
 import { AntDesign } from "@expo/vector-icons"
 import Chatcomponent from "../components/Chatcomponent"
 import NewGroupModal from "../components/Modal"
-
+import message from "../assets/message.jpeg"
 import { socket } from "../utils"
 
 
@@ -50,35 +51,35 @@ export default function Chatscreen ({ navigation }) {
 
   return (
     <View style={styles.mainWrapper}>
+      <ImageBackground source={message} style={styles.homeImage}>
+        <View style={styles.topContainer}>
+          <View style={styles.header}>
+            <Text style={styles.travelHeading}>Traveler {currentUser}!</Text>
+            <Pressable onPress={handleLogout} style={styles.closeButton}>
+              <AntDesign name="close" size={30} color={"white"} />
+            </Pressable>
+          </View>
+        </View>
 
-
-
-      <View style={styles.topContainer}>
-        <View style={styles.header}>
-          <Text style={styles.travelHeading}>Traveler {currentUser}!</Text>
-          <Pressable onPress={handleLogout} style={styles.closeButton}>
-            <AntDesign name="close" size={30} color={"black"} />
+        <View style={styles.listContainer}>
+          {allChatRooms && allChatRooms.length > 0 ? (
+            <FlatList
+              data={allChatRooms}
+              renderItem={({ item }) => <Chatcomponent item={item} />}
+              keyExtractor={(item) => item.id}
+            />
+          ) : null}
+        </View>
+        <View style={styles.bottomContainer}>
+          <Pressable onPress={() => setModalVisible(true)} style={styles.button}>
+            <View>
+              <Text style={styles.buttonText}>Find New Planet</Text>
+            </View>
           </Pressable>
         </View>
-      </View>
-      <View style={styles.listContainer}>
-        {allChatRooms && allChatRooms.length > 0 ? (
-          <FlatList
-            data={allChatRooms}
-            renderItem={({ item }) => <Chatcomponent item={item} />}
-            keyExtractor={(item) => item.id}
-          />
-        ) : null}
-      </View>
-      <View style={styles.bottomContainer}>
-        <Pressable onPress={() => setModalVisible(true)} style={styles.button}>
-          <View>
-            <Text style={styles.buttonText}>Find Another Star</Text>
-          </View>
-        </Pressable>
-      </View>
-      {modalVisible && <NewGroupModal />}
 
+        {modalVisible && <NewGroupModal />}
+      </ImageBackground>
     </View>
   )
 }
@@ -100,6 +101,11 @@ const styles = StyleSheet.create({
     color: "#fff",
     marginBottom: 10,
 
+  },
+  homeImage: {
+    width: "100%",
+    flex: 4,
+    justifyContent: "center",
   },
   backgroundVideo: {
     position: 'absolute',

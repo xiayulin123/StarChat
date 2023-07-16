@@ -1,6 +1,7 @@
 import { useContext, useEffect, useLayoutEffect } from "react"
 import {
   FlatList,
+  ImageBackground,
   Keyboard,
   Pressable,
   StyleSheet,
@@ -11,6 +12,7 @@ import {
 import { GlobalContext } from "../context"
 import Messagecomponent from "../components/Messagecomponent"
 import { socket } from "../utils/index"
+import chatpng from '../assets/chat.jpeg'
 
 export default function Messagescreen ({ navigation, route }) {
   const { currentGroupName, currentGroupID } = route.params
@@ -18,7 +20,7 @@ export default function Messagescreen ({ navigation, route }) {
     allChatMessages,
     setAllChatMessages,
     currentUser,
-    currentChatMesage,
+    currentChatMessage,
     setCurrentChatMessage,
   } = useContext(GlobalContext)
 
@@ -36,7 +38,7 @@ export default function Messagescreen ({ navigation, route }) {
 
     if (currentUser) {
       socket.emit("newChatMessage", {
-        currentChatMesage,
+        currentChatMessage,
         groupIdentifier: currentGroupID,
         currentUser,
         timeData,
@@ -56,35 +58,40 @@ export default function Messagescreen ({ navigation, route }) {
 
   return (
     <View style={styles.wrapper}>
-      <View
-        style={[styles.wrapper, { paddingVertical: 15, paddingHorizontal: 10 }]}
-      >
-        {allChatMessages && allChatMessages[0] ? (
-          <FlatList
-            data={allChatMessages}
-            renderItem={({ item }) => (
-              <Messagecomponent item={item} currentUser={currentUser} />
-            )}
-            keyExtractor={(item) => item.id}
-          />
-        ) : (
-          ""
-        )}
-      </View>
-      <View style={styles.messageInputContainer}>
-        <TextInput
-          style={styles.messageInput}
-          value={currentChatMesage}
-          onChangeText={(value) => setCurrentChatMessage(value)}
-          placeholder="Enter your message"
-        />
+      <ImageBackground source={chatpng} style={styles.homeImage}>
+        <View
+          style={[styles.wrapper, { paddingVertical: 15, paddingHorizontal: 10 }]}
+        >
+          {allChatMessages && allChatMessages[0] ? (
+            <FlatList
+              data={allChatMessages}
+              renderItem={({ item }) => (
+                <Messagecomponent item={item} currentUser={currentUser} />
+              )}
+              keyExtractor={(item) => item.id}
+            />
+          ) : (
+            ""
+          )}
+        </View>
+        <View style={styles.messageInputContainer}>
 
-        <Pressable onPress={handleAddNewMessage} style={styles.button}>
-          <View>
-            <Text style={styles.buttonText}>SEND</Text>
-          </View>
-        </Pressable>
-      </View>
+          <TextInput
+            style={styles.messageInput}
+            value={currentChatMessage}
+            onChangeText={(value) => setCurrentChatMessage(value)}
+            placeholder="Enter your message"
+            placeholderTextColor='white'
+          />
+
+          <Pressable onPress={handleAddNewMessage} style={styles.button}>
+            <View>
+              <Text style={styles.buttonText}>SEND</Text>
+            </View>
+          </Pressable>
+
+        </View>
+      </ImageBackground>
     </View>
   )
 }
@@ -92,32 +99,38 @@ export default function Messagescreen ({ navigation, route }) {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: "#eee",
+
+
+  },
+  homeImage: {
+    width: "100%",
+    flex: 4,
+    justifyContent: "center",
   },
   messageInputContainer: {
-    width: "100%",
-    backgroundColor: "#fff",
-    paddingVertical: 30,
-    paddingHorizontal: 15,
-    justifyContent: "center",
-    flexDirection: "row",
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 20,
+    backgroundColor: 'rgba(0,0,0,0.3)',
   },
   messageInput: {
-    borderWidth: 1,
-    padding: 15,
     flex: 1,
-    borderRadius: 50,
     marginRight: 10,
+    height: 40,
+    color: 'white'
   },
   button: {
-    width: "30%",
-    backgroundColor: "#703efe",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 50,
+    width: 60,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
-    color: "#fff",
-    fontSize: 20,
+    color: '#fff',
+    fontWeight: 'bold',
   },
 })

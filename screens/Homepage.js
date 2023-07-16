@@ -8,7 +8,7 @@ import {
   TextInput,
   View,
 } from "react-native"
-import homeImage from "../assets/star.jpg"
+import homeImage from "../assets/wait.jpeg"
 import { useContext, useEffect } from "react"
 import { GlobalContext } from "../context"
 

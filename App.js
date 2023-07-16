@@ -7,6 +7,8 @@ import Messagescreen from "./screens/Messagescreen"
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import GlobalState from "./context"
+import ReactDOM from 'react-dom'
+
 
 const Stack = createNativeStackNavigator()
 
@@ -37,7 +39,7 @@ export default function App () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "rgba(255,255,255,0.1)",
     alignItems: "center",
     justifyContent: "center",
   },

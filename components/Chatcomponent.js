@@ -1,27 +1,32 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-import { useContext, useEffect } from "react";
-import { GlobalContext } from "../context";
-import { useNavigation } from "@react-navigation/native";
+import { Pressable, StyleSheet, Text, View } from "react-native"
+import { FontAwesome } from "@expo/vector-icons"
+import { FontAwesome5 } from '@expo/vector-icons'
 
-export default function Chatcomponent({ item }) {
-  const navigation = useNavigation();
+import {
+  faPlanetRinged
+} from '@fortawesome/free-solid-svg-icons'
+import { useContext, useEffect } from "react"
+import { GlobalContext } from "../context"
+import { useNavigation } from "@react-navigation/native"
 
-  console.log(item.messages[item.messages.length - 1]);
+export default function Chatcomponent ({ item }) {
+  const navigation = useNavigation()
+
+  console.log(item.messages[item.messages.length - 1])
 
 
 
-  function handleNavigateToMessageScreen() {
+  function handleNavigateToMessageScreen () {
     navigation.navigate("Messagescreen", {
       currentGroupName: item.currentGroupName,
       currentGroupID: item.id,
-    });
+    })
   }
 
   return (
     <Pressable style={styles.chat} onPress={handleNavigateToMessageScreen}>
       <View style={styles.circle}>
-        <FontAwesome name="group" size={24} color={"black"} />
+        <FontAwesome5 name="rocket" size={26} color="black" spin />
       </View>
       <View style={styles.rightContainer}>
         <View>
@@ -37,7 +42,7 @@ export default function Chatcomponent({ item }) {
         </View>
       </View>
     </Pressable>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -77,4 +82,4 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     marginRight: 10,
   },
-});
+})

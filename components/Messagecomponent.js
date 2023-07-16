@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native"
 
-export default function Messagecomponent({ currentUser, item }) {
-  const currentUserStatus = item.currentUser !== currentUser;
+export default function Messagecomponent ({ currentUser, item }) {
+  const currentUserStatus = item.currentUser !== currentUser
 
-  console.log(currentUserStatus , item);
+  console.log(currentUserStatus, item)
 
   return (
     <View style={currentUserStatus ? {} : { alignItems: "flex-end" }}>
@@ -13,7 +13,7 @@ export default function Messagecomponent({ currentUser, item }) {
             style={
               currentUserStatus
                 ? styles.messageItem
-                : [styles.messageItem, { backgroundColor: "#703efe" }]
+                : [styles.messageItem, { backgroundColor: "#000" }]
             }
           >
             <Text
@@ -28,7 +28,7 @@ export default function Messagecomponent({ currentUser, item }) {
         <Text style={styles.messageTime}>{item.time}</Text>
       </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 2,
   },
-  messageTime : {
-    marginLeft : 10
+  messageTime: {
+    marginLeft: 10,
+    color: 'white'
   }
-});
+})

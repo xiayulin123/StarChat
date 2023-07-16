@@ -43,7 +43,7 @@ const NewGroupModal = () => {
         <View style={styles.modalView}>
           <TextInput
             autoCorrect={false}
-            placeholder="Enter group name"
+            placeholder="Enter Planet name"
             style={styles.loginInput}
             onChangeText={(value) => setCurrentGroupName(value)}
             value={currentGroupName}
@@ -51,7 +51,7 @@ const NewGroupModal = () => {
           <View style={styles.buttonWrapper}>
             <Pressable onPress={handleCreateNewRoom} style={styles.button}>
               <View>
-                <Text style={styles.buttonText}>Adds</Text>
+                <Text style={styles.buttonText}>Add</Text>
               </View>
             </Pressable>
             <Pressable
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    backgroundColor: "white",
+    backgroundColor: "rgba(255,255,255,0.5)",
     borderRadius: 20,
     padding: 35,
     // alignItems: "center",
@@ -103,9 +103,10 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     borderWidth: 1,
     padding: 8,
+    fontWeight: "bold"
   },
   button: {
-    backgroundColor: "#703efe",
+    backgroundColor: "rgb(26,26,26)",
     padding: 15,
     marginVertical: 10,
     elevation: 1,

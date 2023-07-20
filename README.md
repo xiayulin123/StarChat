@@ -15,7 +15,7 @@ Star Chat is a lightweight messaging application designed for seamless communica
 Star Chat utilizes React and JavaScript for both the frontend and backend. It employs socket connections to establish communication between the two. Currently, the app operates smoothly on Android devices and will undergo testing for iPhone compatibility in the future.
 
 ## Installation
-
+<img src="https://img.shields.io/badge/Socket.IO-Real--time%20Communication%20Library-blue" alt="shields">
 To run the frontend, follow these steps:
 1. Navigate to the "frontend" directory.
 2. Install dependencies by running the command: `npm i`.

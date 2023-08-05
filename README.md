@@ -1,46 +1,49 @@
-# Star Chat
+# Star Chat 🌟
 
-## A Compact Messaging Application
+<p align="center">
+  <img src="https://img.shields.io/badge/Socket.IO-Real--time%20Communication%20Library-blue" alt="shields">
+</p>
 
-Star Chat is a lightweight messaging application designed for seamless communication between users. It provides a delightful user experience and has been optimized to maximize its effectiveness.
+## 🚀 A Compact Messaging Application
 
-## Key Features
+Star Chat is a sleek and lightweight messaging application designed to facilitate seamless communication between users. It offers a delightful user experience and has been meticulously optimized to maximize its effectiveness.
 
-- Save chat history
-- User login and registration
-- Intuitive user interface for a seamless experience
+## 🌟 Key Features
 
-## Technical Details
+- 💾 Save Chat History: Never lose important conversations again.
+- 👤 User Login and Registration: Securely create and access your account.
+- 🎨 Intuitive User Interface: Enjoy a smooth and intuitive interface for a seamless messaging experience.
 
-Star Chat utilizes React and JavaScript for both the frontend and backend. It employs socket connections to establish communication between the two. Currently, the app operates smoothly on Android devices and will undergo testing for iPhone compatibility in the future.
+## 🛠️ Technical Details
 
-## Installation
-<img src="https://img.shields.io/badge/Socket.IO-Real--time%20Communication%20Library-blue" alt="shields">
+Star Chat leverages React and JavaScript for both its frontend and backend. The app employs socket connections to establish real-time communication between the two ends. While it currently operates seamlessly on Android devices, compatibility testing for iPhones is in progress and coming soon.
+
+## 🛠️ Installation
+
 To run the frontend, follow these steps:
+
 1. Navigate to the "frontend" directory.
-2. Install dependencies by running the command: `npm i`.
-3. Start the server with the command: `npx expo start`.
+2. Install dependencies by running: `npm i`.
+3. Start the server with: `npx expo start`.
 
 To start the backend, follow these steps:
+
 1. Navigate to the "backend" directory.
-2. Install dependencies by running the command: `npm i`.
-3. Start the server with the command: `npm run start`.
+2. Install dependencies by running: `npm i`.
+3. Start the server with: `npm run start`.
 
-To view the app on a local machine using a virtual device, an emulator is required. We recommend using the AVD (Android Virtual Device) provided by Android Studio. If you don't have it already, download and install Android Studio. Then, within your project folder, create a new virtual device. Once the frontend is up and running, use the emulator to connect to the app by typing "a" in the terminal.
+For local testing using a virtual device, an emulator is required. We recommend using the Android Virtual Device (AVD) provided by Android Studio. If you don't have it, download and install Android Studio, create a new virtual device within your project folder, and connect to the app by typing "a" in the terminal once the frontend is running.
 
-## Usage
+## 🚀 Usage
 
-Star Chat enables users to record their chat history, create accounts, and log in securely. Exciting new features are in development and will be released in the future. Stay tuned for updates!
+Star Chat empowers users to seamlessly record their chat history, securely create accounts, and log in. Exciting new features are currently in development and will be unveiled in the near future. Stay tuned for exciting updates!
 
+## 🎥 Demo
 
-## Preview
+![Home](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/6273da1e-1f1c-4f51-a44a-aba5330283e3)
 
-![home](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/6273da1e-1f1c-4f51-a44a-aba5330283e3)
+![Signup](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/86762824-f7b6-47fc-bb80-23cb36fac731)
 
+![Chat](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/93fd836d-b586-410f-affa-74cbc9006413)
 
-![signup](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/86762824-f7b6-47fc-bb80-23cb36fac731)
-
-![chat](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/93fd836d-b586-410f-affa-74cbc9006413)
-
-
-![message](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/d5cd0738-39cd-4bc1-af89-302066a70566)
+![Message](https://github.com/xiayulin123/StarChat_frontend/assets/113715923/d5cd0738-39cd-4bc1-af89-302066a70566)
